@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cypher Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <style>
+        table{
+            margin-left: 0;
+            margin-right: 0;
+        }
+        form{
+            margin-top: 50px;
+        }
+        .center{
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary"> 
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+    <center>
+        <form method="post" class="col-md-6 col-md-offset-3">
+            {% csrf_token %}
+            <div class="form-floating mb-3">
+            <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">City</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="city" placeholder="Search">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+        </form>
+        </center>  
+            {% if city and coord and temp and humidity and pressure and wind_speed and wind_degree %}
+            <div class="center">
+                <table class="table table-hover" align="center">
+                    <thead>
+                      <tr class="table-primary">
+                        <th scope="col">City</th>
+                        <th scope="col">{{city}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-info">
+                        <td>Coordinates</td>
+                        <td>{{coord}}</td>
+                      </tr>
+                      <tr class="table-info">
+                        <td>Temperature</td>
+                        <td>{{temp}}</td>
+                      </tr>
+                      <tr class="table-info">
+                        <td>Humidity</td>
+                        <td>{{humidity}}</td>
+                      </tr>
+                      <tr class="table-info">
+                        <td>Pressure</td>
+                        <td>{{pressure}}</td>
+                      </tr>
+                      <tr class="table-info">
+                        <td>Wind Speed</td>
+                        <td>{{wind_speed}}</td>
+                      </tr>
+                      <tr class="table-info">
+                        <td>Wind Degree</td>
+                        <td>{{wind_degree}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            {% endif %}
+</body>
+</html>
