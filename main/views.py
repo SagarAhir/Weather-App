@@ -10,7 +10,7 @@ def index(request):
         
         try:
             source = urllib.request.urlopen(
-                'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=ec90b5cac62a2c858e6ce157b8b8799d').read()
+                'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=Your API Key').read()
         except:
             data = {'error': '404'}
             return render(request, "main/index.html", data)
