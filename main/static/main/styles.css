@@ -1,0 +1,51 @@
+.col-sm-2{
+    text-shadow: #00AAFF;
+    text-decoration: wavy;
+  }
+    table{
+        margin-left: 0;
+    }
+    form{
+        margin-top: 50px;
+    }
+    .center{
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    body{
+        /* background: linear-gradient(to top,  rgb(58, 0, 134),#00AAFF, #81d5ff) fixed;*/
+        background: linear-gradient(to top, aliceblue,aqua, #00AAFF) fixed; 
+        background-image: url("icons/bg.jpg");
+        background-size: cover;
+        }
+        .col-form-label:hover{
+            background-color:rgba(255, 255, 255, .30);
+            border-radius:200px;
+        }
+  .btn-success,.form-control{
+    border-radius: 50px;
+  }
+
+  .myicon{
+      width:4%;
+      height:4%;
+      margin-left: 10px;
+  }
+
+  .navbar-brand:hover{
+      padding: 5px;
+      background-color: rgba(255, 255, 255, .30);
+      border-radius: 30px;
+  }
+  table:hover{
+      padding: 2%;
+  }
+  td{
+      padding-left: 100px;
+  }
+.navbar-dark{
+    opacity: 0.7; 
+    background: linear-gradient(to right,  rgb(60, 0, 128),rgb(0, 81, 255),#00AAFF,aqua);
+}
